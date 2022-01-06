@@ -14,6 +14,5 @@ public class ColaboradorChange extends EventChange {
             colaborador.perfil = event.getPerfil();
         });
 
-
     }
 }

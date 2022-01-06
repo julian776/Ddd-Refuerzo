@@ -26,7 +26,7 @@ public class NombreCompleto implements ValueObject<NombreCompleto> {
         return segundoNombre;
     }
 
-    public NombreCompleto modificar(String primerNombre, String segundoNombre){
+    public NombreCompleto actualizar(String primerNombre, String segundoNombre){
         return new NombreCompleto(primerNombre, segundoNombre);
     }
 
