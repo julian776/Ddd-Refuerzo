@@ -2,6 +2,7 @@ package com.sofka.ddd.domain.colaborador;
 
 import co.com.sofka.domain.generic.EventChange;
 import com.sofka.ddd.domain.colaborador.events.ColaboradorCreado;
+import com.sofka.ddd.domain.colaborador.events.NombreCompletoModificado;
 
 public class ColaboradorChange extends EventChange {
     public ColaboradorChange(Colaborador colaborador) {

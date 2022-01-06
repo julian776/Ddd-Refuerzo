@@ -1,7 +1,9 @@
 package com.sofka.ddd.domain.colaborador;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 import com.sofka.ddd.domain.colaborador.events.ColaboradorCreado;
+import com.sofka.ddd.domain.colaborador.events.NombreCompletoModificado;
 import com.sofka.ddd.domain.colaborador.values.Cedula;
 import com.sofka.ddd.domain.colaborador.values.FechaNacimiento;
 import com.sofka.ddd.domain.colaborador.values.Genero;
@@ -9,6 +11,7 @@ import com.sofka.ddd.domain.colaborador.values.NombreCompleto;
 import com.sofka.ddd.domain.hojavida.values.HojaDeVidaId;
 import com.sofka.ddd.domain.perfil.Perfil;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Colaborador extends AggregateEvent<HojaDeVidaId> {
@@ -34,6 +37,12 @@ public class Colaborador extends AggregateEvent<HojaDeVidaId> {
     private Colaborador(HojaDeVidaId entityId){
         super(entityId);
         subscribe(new ColaboradorChange(this));
+    }
+
+    public static Colaborador from(HojaDeVidaId entityId, List<DomainEvent> retrieveEvents) {
+        var colaborador = new Colaborador(entityId);
+        retrieveEvents.forEach(colaborador::applyEvent);
+        return colaborador;
     }
 
     public void modificarNombre(String primerNombre, String segundoNombre){

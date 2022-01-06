@@ -1,4 +1,4 @@
-package com.sofka.ddd.domain.colaborador;
+package com.sofka.ddd.domain.colaborador.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
 

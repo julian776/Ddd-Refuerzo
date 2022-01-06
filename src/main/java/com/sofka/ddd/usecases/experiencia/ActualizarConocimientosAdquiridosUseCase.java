@@ -12,6 +12,7 @@ public class ActualizarConocimientosAdquiridosUseCase extends UseCase<RequestCom
     public void executeUseCase(RequestCommand<ActualizarConocimientosAdquiridosCommand> requestCommand) {
         var command = requestCommand.getCommand();
         var experiencia = Experiencia.from(command.getEntityId(), retrieveEvents());
+        experiencia.modificarExperienciaLaboralConocimientos(command.getConocimientosAdquiridos());
         emit().onResponse(new ResponseEvents(experiencia.getUncommittedChanges()));
     }
 }
