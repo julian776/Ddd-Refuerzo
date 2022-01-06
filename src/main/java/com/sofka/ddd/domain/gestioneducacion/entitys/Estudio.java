@@ -1,4 +1,4 @@
-package com.sofka.ddd.domain.gestioneducacion;
+package com.sofka.ddd.domain.gestioneducacion.entitys;
 
 import co.com.sofka.domain.generic.ValueObject;
 

@@ -6,7 +6,7 @@ import com.sofka.ddd.domain.colaborador.values.Cedula;
 import com.sofka.ddd.domain.colaborador.values.FechaNacimiento;
 import com.sofka.ddd.domain.colaborador.values.Genero;
 import com.sofka.ddd.domain.colaborador.values.NombreCompleto;
-import com.sofka.ddd.domain.hojavida.HojaDeVidaId;
+import com.sofka.ddd.domain.hojavida.values.HojaDeVidaId;
 import com.sofka.ddd.domain.perfil.Perfil;
 
 import java.util.Objects;

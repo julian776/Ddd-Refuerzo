@@ -1,4 +1,4 @@
-package com.sofka.ddd.domain.hojavida;
+package com.sofka.ddd.domain.hojavida.events;
 
 public class HojaDeVidaCreada extends co.com.sofka.domain.generic.DomainEvent {
 

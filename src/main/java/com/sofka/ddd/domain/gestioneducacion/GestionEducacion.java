@@ -3,6 +3,8 @@ package com.sofka.ddd.domain.gestioneducacion;
 import co.com.sofka.domain.generic.AggregateEvent;
 import com.sofka.ddd.domain.experiencia.values.Institucion;
 import com.sofka.ddd.domain.experiencia.values.Periodo;
+import com.sofka.ddd.domain.gestioneducacion.entitys.Estudio;
+import com.sofka.ddd.domain.gestioneducacion.values.GestionEducacionId;
 import com.sofka.ddd.domain.gestioneducacion.values.Tipo;
 
 public class GestionEducacion extends AggregateEvent<GestionEducacionId> {

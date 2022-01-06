@@ -3,7 +3,7 @@ package com.sofka.ddd.domain.experiencia;
 import co.com.sofka.domain.generic.AggregateEvent;
 import com.sofka.ddd.domain.experiencia.entitys.ExperienciaLaboral;
 import com.sofka.ddd.domain.experiencia.values.ExperienciaId;
-import com.sofka.ddd.domain.hojavida.HojaDeVidaId;
+import com.sofka.ddd.domain.hojavida.values.HojaDeVidaId;
 
 public class Experiencia extends AggregateEvent<ExperienciaId> {
 

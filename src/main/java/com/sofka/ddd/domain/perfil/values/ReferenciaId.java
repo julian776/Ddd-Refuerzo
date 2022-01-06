@@ -1,4 +1,4 @@
-package com.sofka.ddd.domain.perfil;
+package com.sofka.ddd.domain.perfil.values;
 
 import co.com.sofka.domain.generic.Identity;
 

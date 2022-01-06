@@ -1,7 +1,8 @@
-package com.sofka.ddd.domain.perfil;
+package com.sofka.ddd.domain.perfil.entitys;
 
 import co.com.sofka.domain.generic.Entity;
 import com.sofka.ddd.domain.colaborador.values.NombreCompleto;
+import com.sofka.ddd.domain.perfil.values.ReferenciaId;
 import com.sofka.ddd.domain.perfil.values.InformacionContacto;
 
 import java.util.Objects;

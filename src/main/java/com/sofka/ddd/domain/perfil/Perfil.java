@@ -1,7 +1,9 @@
 package com.sofka.ddd.domain.perfil;
 
 import co.com.sofka.domain.generic.AggregateEvent;
-import com.sofka.ddd.domain.hojavida.HojaDeVidaId;
+import com.sofka.ddd.domain.hojavida.values.HojaDeVidaId;
+import com.sofka.ddd.domain.perfil.entitys.Referencia;
+import com.sofka.ddd.domain.perfil.events.InformacionContactoActualizada;
 import com.sofka.ddd.domain.perfil.values.FotoPerfil;
 import com.sofka.ddd.domain.perfil.values.InformacionContacto;
 
@@ -21,6 +23,11 @@ public class Perfil extends AggregateEvent<HojaDeVidaId> {
         this.referencias = Objects.requireNonNull(referencias);
     }
 
+    private Perfil(HojaDeVidaId entityId){
+        super(entityId);
+        subscribe(new PerfilChange(this));
+    }
+
     public InformacionContacto getInformacionContacto() {
         return informacionContacto;
     }
@@ -31,5 +38,9 @@ public class Perfil extends AggregateEvent<HojaDeVidaId> {
 
     public List<Referencia> getReferencias() {
         return referencias;
+    }
+
+    public void actualizarInformacion(String telefono, String telefonoFamiliar){
+        appendChange(new InformacionContactoActualizada(telefono, telefonoFamiliar)).apply();
     }
 }
