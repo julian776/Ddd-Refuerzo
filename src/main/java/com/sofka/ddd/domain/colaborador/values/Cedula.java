@@ -15,6 +15,14 @@ public class Cedula implements ValueObject<String> {
         }
     }
 
+    public String getCedula() {
+        return cedula;
+    }
+
+    public Cedula modificar(String cedula){
+        return new Cedula(cedula);
+    }
+
     @Override
     public String value() {
         return this.cedula;

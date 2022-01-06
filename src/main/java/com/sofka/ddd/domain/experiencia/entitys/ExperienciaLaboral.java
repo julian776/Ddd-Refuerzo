@@ -29,6 +29,10 @@ public class ExperienciaLaboral extends Entity<ExperienciaLaboralId> {
         return periodo;
     }
 
+    public void actualizarConocimientos(ConocimientosAdquiridos conocimientosAdquiridos){
+        this.conocimientosAdquiridos = conocimientosAdquiridos;
+    }
+
     public ConocimientosAdquiridos getConocimientosAdquiridos() {
         return conocimientosAdquiridos;
     }

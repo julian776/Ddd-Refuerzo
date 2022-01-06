@@ -16,6 +16,14 @@ public class ConocimientosAdquiridos implements ValueObject<ConocimientosAdquiri
         }
     }
 
+    public String getConocimientos() {
+        return this.conocimientos;
+    }
+
+    public ConocimientosAdquiridos modificar(String conocimientos){
+        return new ConocimientosAdquiridos(conocimientos);
+    }
+
     @Override
     public ConocimientosAdquiridos value() {
         return this;
