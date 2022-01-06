@@ -36,6 +36,10 @@ public class Colaborador extends AggregateEvent<HojaDeVidaId> {
         subscribe(new ColaboradorChange(this));
     }
 
+    public void modificarNombre(String primerNombre, String segundoNombre){
+        appendChange(new NombreCompletoModificado(primerNombre, segundoNombre)).apply();
+    }
+
     public FechaNacimiento getFechaNacimiento() {
         return fechaNacimiento;
     }
