@@ -7,6 +7,7 @@ import com.sofka.ddd.domain.experiencia.values.Periodo;
 import com.sofka.ddd.domain.gestioncertificacion.command.CrearGestionCertificacionCommand;
 import com.sofka.ddd.domain.gestioncertificacion.entitys.Certificacion;
 import com.sofka.ddd.domain.gestioncertificacion.entitys.CertificacionId;
+import com.sofka.ddd.domain.gestioncertificacion.events.GestionCertificacionCreada;
 import com.sofka.ddd.domain.gestioncertificacion.values.GestionCertificacionId;
 import com.sofka.ddd.domain.hojavida.values.HojaDeVidaId;
 import org.junit.jupiter.api.Assertions;
@@ -30,7 +31,9 @@ class CrearGestionCertficaionUseCaseTest {
                 .syncExecutor(usecase, new RequestCommand<>(command))
                 .orElseThrow();
         //assert
-        var event = events.getDomainEvents().get(0);
+        var event = (GestionCertificacionCreada) events.getDomainEvents().get(0);
         Assertions.assertEquals("xxx", event.aggregateRootId());
+        Assertions.assertEquals("00", event.getCertificacion().getPeriodo().getInicio());
+        Assertions.assertEquals("name", event.getCertificacion().getNombre());
     }
 }

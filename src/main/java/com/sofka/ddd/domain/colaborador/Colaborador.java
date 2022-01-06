@@ -49,6 +49,10 @@ public class Colaborador extends AggregateEvent<HojaDeVidaId> {
         appendChange(new NombreCompletoModificado(primerNombre, segundoNombre)).apply();
     }
 
+    public void modificarGenero(String genero){
+        appendChange(new GeneroModificado(genero)).apply();
+    }
+
     public FechaNacimiento getFechaNacimiento() {
         return fechaNacimiento;
     }

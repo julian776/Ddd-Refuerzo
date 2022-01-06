@@ -18,5 +18,9 @@ public class ColaboradorChange extends EventChange {
         apply((NombreCompletoModificado event) -> {
             colaborador.nombreCompleto = colaborador.nombreCompleto.actualizar(event.getPrimerNombre(), event.getSegundoNombre());
         });
+
+        apply((GeneroModificado event) -> {
+            colaborador.genero = colaborador.genero.actualizar(event.getGenero());
+        });
     }
 }

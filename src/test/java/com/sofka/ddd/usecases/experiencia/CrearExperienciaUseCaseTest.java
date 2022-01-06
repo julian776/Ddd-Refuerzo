@@ -4,6 +4,7 @@ import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.RequestCommand;
 import com.sofka.ddd.domain.experiencia.commands.CrearExperienciaCommand;
 import com.sofka.ddd.domain.experiencia.entitys.ExperienciaLaboral;
+import com.sofka.ddd.domain.experiencia.events.ExperienciaCreada;
 import com.sofka.ddd.domain.experiencia.values.*;
 import com.sofka.ddd.domain.hojavida.values.HojaDeVidaId;
 import org.junit.jupiter.api.Assertions;
@@ -27,7 +28,8 @@ class CrearExperienciaUseCaseTest {
                 .syncExecutor(usecase, new RequestCommand<>(command))
                 .orElseThrow();
         //assert
-        var event = events.getDomainEvents().get(0);
+        var event = (ExperienciaCreada) events.getDomainEvents().get(0);
         Assertions.assertEquals("xxx", event.aggregateRootId());
+        Assertions.assertEquals("yyy", event.getExperienciaLaboral().getInstitucion().institucion());
     }
 }
